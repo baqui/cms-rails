@@ -1,6 +1,7 @@
 class SessionsController < Devise::SessionsController
     respond_to :json
 
+    #based on https://medium.com/@mazik.wyry/rails-5-api-jwt-setup-in-minutes-using-devise-71670fd4ed03
     private
 
     def respond_with(resource, _opts = {})

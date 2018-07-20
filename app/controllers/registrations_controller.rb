@@ -2,14 +2,22 @@ class RegistrationsController < Devise::RegistrationsController
     respond_to :json
 
     def create
-        build_resource(register_params)
-
+        build_resource(sign_up_params)
         resource.save
-        render_resource(resource)
-    end
 
-    private
-    def register_params
-        params.permit(:email, :password)
+        #copy paste methods from https://scotch.io/@jiggs/rails-api-doorkeeper-devise
+        if resource.persisted?
+            if resource.active_for_authentication?
+                render json: resource
+            else
+                expire_data_after_sign_in!
+                render json: resource
+            end
+        else
+            clean_up_passwords resource
+            set_minimum_password_length
+            respond_with resource
+        end
     end
+    
 end
