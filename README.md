@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Articles to read: 
 
-Things you may want to cover:
+### rails 5 api + devise-jwt tutorial
+[link](https://medium.com/@mazik.wyry/rails-5-api-jwt-setup-in-minutes-using-devise-71670fd4ed03)
 
-* Ruby version
+### devise-jwt docs
+[link](https://github.com/waiting-for-dev/devise-jwt)
 
-* System dependencies
+### api-doorkeeper-devise
+[link](https://scotch.io/@jiggs/rails-api-doorkeeper-devise)
 
-* Configuration
+### autorization - after login in response header -> 'Authorization': 'Bearer #{token}'
+### auth frontend -> 'Authorization': 'Bearer #{token}'
 
-* Database creation
+### generate DEVISE_JWT_SECRET_KEY:
+rake secret
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-> paste to env file 
+DEVISE_JWT_SECRET_KEY=#{token}

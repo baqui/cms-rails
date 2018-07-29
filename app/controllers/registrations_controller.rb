@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
         build_resource(sign_up_params)
         resource.save
 
-        #copy paste methods from https://scotch.io/@jiggs/rails-api-doorkeeper-devise
+        #??????
         if resource.persisted?
             if resource.active_for_authentication?
                 render json: resource
